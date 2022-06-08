@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <button class="navbar__brand">
+    <p class="navbar__brand--title">
+      <span class="text">mapApp </span>
+      <fa-icon [icon]="faMapLocationDot" class="icon"></fa-icon>
+    </p>
+    <p class="navbar__brand--subtitle">angular 13.2.0</p>
+  </button>
+  <button class="navbar__toggleBtn" (click)="toggleNavItems()">
+    <fa-icon [icon]="faHamburger" class="fa-3x"></fa-icon>
+  </button>
+  <div class="navbar__items">
+    <app-button
+      *ngFor="let item of btnArr"
+      [name]="item.name"
+      [type]="item.type"
+      (click)="item.method()"
+    >
+    </app-button>
+  </div>
+</nav>
+<app-modal *ngIf="isModalDisplayed"></app-modal>

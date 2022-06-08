@@ -1,0 +1,57 @@
+.modal {
+  position: absolute;
+  right: 0;
+  z-index: 999; // bad idea but work! xD
+  background-color: rgba(250, 250, 250);
+  animation: fadeIn 0.3s ease-in;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+
+  &__input {
+    padding: 5px;
+    width: 100%;
+    height: 25px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  &__error {
+    margin: 7px 0;
+    color: rgb(235, 0, 0);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 2px black;
+    font-size: 16px;
+    font-weight: bold;
+    width: 50px;
+    transition: .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="modal">
+    <form
+      [formGroup]="coordinatesForm"
+      (ngSubmit)="goToNewCoordinates()"
+      class="form"
+    >
+      <div>
+        <input
+          type="number"
+          placeholder="Enter longitude"
+          formControlName="longitude"
+          class="form__input"
+        />
+        <p
+          class="form__error"
+          *ngIf="longitude && longitude.invalid && longitude.touched"
+        >
+          Enter a number!
+        </p>
+      </div>
+  
+      <div>
+        <input
+          type="number"
+          placeholder="Enter latitude"
+          formControlName="latitude"
+          class="form__input"
+        />
+        <p
+          class="form__error"
+          *ngIf="latitude && latitude.invalid && latitude.touched"
+        >
+          Enter a number!
+        </p>
+      </div>
+  
+      <button
+        class="form__btn"
+        type="submit"
+        [disabled]="coordinatesForm.invalid"
+      >
+        Go
+      </button>
+    </form>
+  </div>
+  
