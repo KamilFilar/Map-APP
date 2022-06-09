@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ModalComponent {
   
-  public coordinatesForm: FormGroup = new FormGroup({
+  coordinatesForm: FormGroup = new FormGroup({
     longitude: new FormControl('', [
       Validators.required
     ]),
@@ -22,15 +22,15 @@ export class ModalComponent {
     private mapService: MapService
   ) {}
 
-  public get longitude() {
+  get longitude() {
     return this.coordinatesForm.get('longitude');
   }
 
-  public get latitude() {
+  get latitude() {
     return this.coordinatesForm.get('latitude');
   }
 
-  public goToNewCoordinates(): void {
+  goToNewCoordinates(): void {
     this.mapService.changeCoordinates(
       this.coordinatesForm.value.longitude,
       this.coordinatesForm.value.latitude

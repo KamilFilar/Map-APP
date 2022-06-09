@@ -10,12 +10,12 @@ import { MapService } from '../../../shared/services/map.service';
 })
 export class NavbarComponent {
   
-  public faMapLocationDot: IconDefinition = faMapLocationDot;
-  public faHamburger: IconDefinition = faHamburger;
-  public isModalDisplayed: boolean = false;
-  public isRealTimeOn: boolean = true;
-  public isDrawPolygonSelected: boolean = false;
-  public btnArr: ButtonStruct[] = [
+  faMapLocationDot: IconDefinition = faMapLocationDot;
+  faHamburger: IconDefinition = faHamburger;
+  isModalDisplayed: boolean = false;
+  isRealTimeOn: boolean = true;
+  isDrawPolygonSelected: boolean = false;
+  btnArr: ButtonStruct[] = [
     {
       name: 'Real-Time Model',
       type: 'main',
@@ -37,7 +37,7 @@ export class NavbarComponent {
     private mapService: MapService
   ) {}
 
-  public setRealTimeModel(): void {
+  setRealTimeModel(): void {
     this.isRealTimeOn = !this.isRealTimeOn;
     // close modal when opened
     if (this.isModalDisplayed === true) {
@@ -49,15 +49,15 @@ export class NavbarComponent {
     }
   }
 
-  public toggleModal(): boolean {
+  toggleModal(): boolean {
     return (this.isModalDisplayed = !this.isModalDisplayed);
   }
 
-  public shouldDraw(): boolean {
+  shouldDraw(): boolean {
     return (this.isDrawPolygonSelected = !this.isDrawPolygonSelected);
   }
 
-  public startDrawingPolygon(): void {
+  startDrawingPolygon(): void {
     this.isDrawPolygonSelected = true;
     // close modal when opened
     if (this.isModalDisplayed === true) {
@@ -66,7 +66,7 @@ export class NavbarComponent {
     this.mapService.drawPolygon();
   }
 
-  public toggleNavItems(): void {
+  toggleNavItems(): void {
     const items: HTMLElement = document.querySelector('.navbar__items')!;
     items?.classList.toggle('showItems');
   }
